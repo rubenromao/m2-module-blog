@@ -11,16 +11,14 @@ use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Blog post detail controller.
- *
- * @package Rubenromao\BlogPosts\Controller\Post
  */
 class Detail implements HttpGetActionInterface
 {
     /**
      * Constructor.
      *
-     * @param PageFactory      $pageFactory
-     * @param EventManager     $eventManager
+     * @param PageFactory $pageFactory
+     * @param EventManager $eventManager
      * @param RequestInterface $request
      */
     public function __construct(
@@ -31,6 +29,8 @@ class Detail implements HttpGetActionInterface
     }
 
     /**
+     * Execute action based on request and return result.
+     *
      * @return Page
      */
     public function execute(): Page
@@ -38,8 +38,8 @@ class Detail implements HttpGetActionInterface
         $this->eventManager->dispatch(
             'rubenromao_blog_post_detail_view',
             [
-            'request' => $this->request,
-            ]
+                'request' => $this->request,
+            ],
         );
 
         return $this->pageFactory->create();

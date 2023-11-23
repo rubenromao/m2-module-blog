@@ -11,18 +11,16 @@ use Rubenromao\BlogPosts\Api\PostRepositoryInterface;
 use Rubenromao\BlogPosts\Model\ResourceModel\Post\Collection;
 
 /**
- * Class Post
- *
- * @package Rubenromao\BlogPosts\ViewModel
+ * ViewModel to get posts data from the database and make it available for the template
  */
 class Post implements ArgumentInterface
 {
     /**
      * Post constructor.
      *
-     * @param Collection              $collection
+     * @param Collection $collection
      * @param PostRepositoryInterface $postRepository
-     * @param RequestInterface        $request
+     * @param RequestInterface $request
      */
     public function __construct(
         private readonly Collection              $collection,
@@ -32,6 +30,8 @@ class Post implements ArgumentInterface
     }
 
     /**
+     * Get list of posts
+     *
      * @return array
      */
     public function getList(): array
@@ -40,6 +40,8 @@ class Post implements ArgumentInterface
     }
 
     /**
+     * Get count of posts
+     *
      * @return int
      */
     public function getCount(): int
@@ -48,6 +50,8 @@ class Post implements ArgumentInterface
     }
 
     /**
+     * Get post detail
+     *
      * @return PostInterface
      * @throws LocalizedException
      */

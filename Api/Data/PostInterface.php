@@ -17,39 +17,53 @@ interface PostInterface
     public const CREATED_AT = 'created_at';
 
     /**
+     * Post ID getter.
+     *
      * @return int
      */
     public function getId();
 
     /**
-     * @param  int $id
+     * Post title setter.
+     *
+     * @param int $id
      * @return $this
      */
     public function setId(int $id);
 
     /**
+     * Post title getter.
+     *
      * @return string
      */
     public function getTitle();
 
     /**
-     * @param  string $title
+     * Post title setter.
+     *
+     * @param string $title
      * @return $this
      */
     public function setTitle(string $title);
 
     /**
+     * Post content getter.
+     *
      * @return string
      */
     public function getContent();
 
     /**
-     * @param  string $content
+     * Post content setter.
+     *
+     * @param string $content
      * @return $this
      */
     public function setContent(string $content);
 
     /**
+     * Post creation date getter.
+     *
      * @return string
      */
     public function getCreatedAt();

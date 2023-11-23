@@ -13,15 +13,13 @@ use Rubenromao\BlogPosts\Model\ResourceModel\Post as PostResourceModel;
 
 /**
  * Blog post CRUD class.
- *
- * @package Rubenromao\BlogPosts\Model
  */
 class PostRepository implements PostRepositoryInterface
 {
     /**
      * Constructor.
      *
-     * @param PostFactory       $postFactory
+     * @param PostFactory $postFactory
      * @param PostResourceModel $postResourceModel
      */
     public function __construct(
@@ -31,7 +29,9 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * @param  int $id
+     * Get post by ID Model
+     *
+     * @param int $id
      * @return PostInterface
      * @throws NoSuchEntityException
      */
@@ -48,7 +48,9 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * @param  PostInterface $post
+     * Save post Model
+     *
+     * @param PostInterface $post
      * @return PostInterface
      * @throws CouldNotSaveException
      */
@@ -64,7 +66,9 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * @param  int $id
+     * Delete post Model
+     *
+     * @param int $id
      * @return bool
      * @throws CouldNotDeleteException
      * @throws NoSuchEntityException

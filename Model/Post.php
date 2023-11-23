@@ -7,21 +7,13 @@ use Magento\Framework\Model\AbstractModel;
 use Rubenromao\BlogPosts\Api\Data\PostInterface;
 
 /**
- * Class Post
- *
- * @package Rubenromao\BlogPosts\Model
+ * Post model
  */
 class Post extends AbstractModel implements PostInterface
 {
     /**
-     * @return void
-     */
-    protected function _construct(): void
-    {
-        $this->_init(ResourceModel\Post::class);
-    }
-
-    /**
+     * Get title
+     *
      * @return string
      */
     public function getTitle(): string
@@ -30,7 +22,9 @@ class Post extends AbstractModel implements PostInterface
     }
 
     /**
-     * @param  string $title
+     * Set title
+     *
+     * @param string $title
      * @return Post
      */
     public function setTitle(string $title): Post
@@ -39,6 +33,8 @@ class Post extends AbstractModel implements PostInterface
     }
 
     /**
+     * Get content
+     *
      * @return string
      */
     public function getContent(): string
@@ -47,7 +43,9 @@ class Post extends AbstractModel implements PostInterface
     }
 
     /**
-     * @param  string $content
+     * Set content
+     *
+     * @param string $content
      * @return Post
      */
     public function setContent(string $content): Post
@@ -56,10 +54,22 @@ class Post extends AbstractModel implements PostInterface
     }
 
     /**
+     * Get created at
+     *
      * @return string
      */
     public function getCreatedAt(): string
     {
         return $this->getData(self::CREATED_AT);
+    }
+
+    /**
+     * Resource (ORM)
+     *
+     * @return void
+     */
+    protected function _construct(): void
+    {
+        $this->_init(ResourceModel\Post::class);
     }
 }

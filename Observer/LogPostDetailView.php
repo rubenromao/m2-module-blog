@@ -9,8 +9,6 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Logs Viewed Posts
- *
- * @package Rubenromao\BlogPosts\Observer
  */
 class LogPostDetailView implements ObserverInterface
 {
@@ -25,6 +23,8 @@ class LogPostDetailView implements ObserverInterface
     }
 
     /**
+     * Logs Viewed Posts
+     *
      * @param  Observer $observer
      * @return void
      */

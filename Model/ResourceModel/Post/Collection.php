@@ -8,13 +8,13 @@ use Rubenromao\BlogPosts\Model\Post;
 use Rubenromao\BlogPosts\Model\ResourceModel\Post as PostResourceModel;
 
 /**
- * Class Collection
- *
- * @package Rubenromao\BlogPosts\Model\ResourceModel\Post
+ * Post Collection
  */
 class Collection extends AbstractCollection
 {
     /**
+     * Collection initialization
+     *
      * @return void
      */
     protected function _construct(): void

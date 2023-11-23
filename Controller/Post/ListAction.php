@@ -9,8 +9,6 @@ use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Blog post list controller.
- *
- * @package Rubenromao\BlogPosts\Controller\Post
  */
 class ListAction implements HttpGetActionInterface
 {
@@ -25,6 +23,8 @@ class ListAction implements HttpGetActionInterface
     }
 
     /**
+     * Render blog post list page.
+     *
      * @return Page
      */
     public function execute(): Page

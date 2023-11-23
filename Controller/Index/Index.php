@@ -9,8 +9,6 @@ use Magento\Framework\Controller\Result\ForwardFactory;
 
 /**
  * Blog index controller.
- *
- * @package Rubenromao\BlogPosts\Controller\Index
  */
 class Index implements HttpGetActionInterface
 {
@@ -25,13 +23,17 @@ class Index implements HttpGetActionInterface
     }
 
     /**
+     * Execute action based on request and return result.
+     *
      * @return Forward
      */
     public function execute(): Forward
     {
         /**
- * @var Forward $forward
-*/
+         * Forward to list action.
+         *
+         * @var Forward $forward
+         */
         $forward = $this->forwardFactory->create();
 
         return $forward->setController('post')->forward('list');

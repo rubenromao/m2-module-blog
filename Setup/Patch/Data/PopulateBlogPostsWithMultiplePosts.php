@@ -11,9 +11,7 @@ use Rubenromao\BlogPosts\Api\PostRepositoryInterface;
 use Rubenromao\BlogPosts\Model\PostFactory;
 
 /**
- * Class PopulateBlogPostsWithMultiplePosts
- *
- * @package Rubenromao\BlogPosts\Setup\Patch\Data
+ * Data patch to add two blog posts to the database.
  */
 class PopulateBlogPostsWithMultiplePosts implements DataPatchInterface
 {
@@ -34,7 +32,7 @@ class PopulateBlogPostsWithMultiplePosts implements DataPatchInterface
     }
 
     /**
-     * @return array|string[]
+     * @inheritDoc
      */
     public static function getDependencies(): array
     {
@@ -42,7 +40,7 @@ class PopulateBlogPostsWithMultiplePosts implements DataPatchInterface
     }
 
     /**
-     * @return array|string[]
+     * @inheritDoc
      */
     public function getAliases(): array
     {
@@ -50,6 +48,8 @@ class PopulateBlogPostsWithMultiplePosts implements DataPatchInterface
     }
 
     /**
+     * Add two blog posts to the database.
+     *
      * @return void
      * @throws LocalizedException
      */
