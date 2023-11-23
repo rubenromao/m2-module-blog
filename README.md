@@ -30,7 +30,7 @@ The
 ### Install using composer
 
 ``` 
-composer require rubenromao/blog
+composer require rubenromao/m2-module-blog-posts
 ```
 
 Run the following command to enable the module:
