@@ -30,7 +30,7 @@ The
 ### Install using composer
 
 ``` 
-composer require rubenromao/blog
+composer require rubenromao/m2-module-blog-posts:1.0.0
 ```
 
 Run the following command to enable the module:
@@ -41,12 +41,12 @@ bin/magento module:enable Rubenromao_BlogPosts
 
 You must run the following commands after the module installation using magento-cli
     
-    ```
+```    
     bin/magento setup:upgrade
     bin/magento setup:di:compile
     bin/magento setup:static-content:deploy -f (optional if you are in developer mode)
     bin/magento cache:flush
-    ```
+```   
 
 For information about a module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).
 
