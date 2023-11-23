@@ -1,38 +1,64 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
-namespace Rubenromao\Blog\Model;
+namespace Rubenromao\BlogPosts\Model;
 
-use Rubenromao\Blog\Api\Data\PostInterface;
 use Magento\Framework\Model\AbstractModel;
+use Rubenromao\BlogPosts\Api\Data\PostInterface;
 
+/**
+ * Class Post
+ *
+ * @package Rubenromao\BlogPosts\Model
+ */
 class Post extends AbstractModel implements PostInterface
 {
-    protected function _construct()
+    /**
+     * @return void
+     */
+    protected function _construct(): void
     {
         $this->_init(ResourceModel\Post::class);
     }
 
-    public function getTitle()
+    /**
+     * @return string
+     */
+    public function getTitle(): string
     {
         return $this->getData(self::TITLE);
     }
 
-    public function setTitle($title)
+    /**
+     * @param string $title
+     * @return Post
+     */
+    public function setTitle(string $title): Post
     {
         return $this->setData(self::TITLE, $title);
     }
 
-    public function getContent()
+    /**
+     * @return string
+     */
+    public function getContent(): string
     {
         return $this->getData(self::CONTENT);
     }
 
-    public function setContent($content)
+    /**
+     * @param string $content
+     * @return Post
+     */
+    public function setContent(string $content): Post
     {
         return $this->setData(self::CONTENT, $content);
     }
 
-    public function getCreatedAt()
+    /**
+     * @return string
+     */
+    public function getCreatedAt(): string
     {
         return $this->getData(self::CREATED_AT);
     }

@@ -1,13 +1,15 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
-namespace Rubenromao\Blog\Api;
+namespace Rubenromao\BlogPosts\Api;
 
-use Rubenromao\Blog\Api\Data\PostInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
+use Rubenromao\BlogPosts\Api\Data\PostInterface;
 
 /**
  * Blog post CRUD interface.
+ *
  * @api
  * @since 1.0.0
  */

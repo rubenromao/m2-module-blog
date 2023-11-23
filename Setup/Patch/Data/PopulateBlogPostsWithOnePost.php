@@ -1,0 +1,74 @@
+<?php
+declare(strict_types=1);
+
+namespace Rubenromao\BlogPosts\Setup\Patch\Data;
+
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Framework\Setup\Patch\DataPatchInterface;
+use Psr\Log\LoggerInterface;
+use Rubenromao\BlogPosts\Api\PostRepositoryInterface;
+use Rubenromao\BlogPosts\Model\PostFactory;
+
+/**
+ * Class PopulateBlogPostsWithOnePost
+ *
+ * @package Rubenromao\BlogPosts\Setup\Patch\Data
+ */
+class PopulateBlogPostsWithOnePost implements DataPatchInterface
+{
+    /**
+     * Constructor.
+     *
+     * @param ModuleDataSetupInterface $moduleDataSetup
+     * @param PostFactory $postFactory
+     * @param PostRepositoryInterface $postRepository
+     * @param LoggerInterface $logger
+     */
+    public function __construct(
+        private readonly ModuleDataSetupInterface $moduleDataSetup,
+        private readonly PostFactory              $postFactory,
+        private readonly PostRepositoryInterface  $postRepository,
+        private readonly LoggerInterface          $logger,
+    ) {}
+
+    /**
+     * @return array|string[]
+     */
+    public static function getDependencies(): array
+    {
+        return [];
+    }
+
+    /**
+     * @return array|string[]
+     */
+    public function getAliases(): array
+    {
+        return [];
+    }
+
+    /**
+     * @return void
+     * @throws LocalizedException
+     */
+    public function apply(): void
+    {
+        $this->moduleDataSetup->startSetup();
+
+        $post = $this->postFactory->create();
+        $post->setData([
+            'title'   => 'An awesome post',
+            'content' => 'This is totally awesome!',
+        ]);
+
+        try {
+            $this->postRepository->save($post);
+        } catch (LocalizedException $e) {
+            $logMessage = 'Could not save post: ' . $e->getMessage();
+            $this->logger->critical($logMessage);
+        }
+
+        $this->moduleDataSetup->endSetup();
+    }
+}

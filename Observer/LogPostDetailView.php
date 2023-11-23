@@ -1,18 +1,33 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
-namespace Rubenromao\Blog\Observer;
+namespace Rubenromao\BlogPosts\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class LogPostDetailView
+ *
+ * @package Rubenromao\BlogPosts\Observer
+ */
 class LogPostDetailView implements ObserverInterface
 {
+    /**
+     * LogPostDetailView constructor.
+     *
+     * @param LoggerInterface $logger
+     */
     public function __construct(
-        private LoggerInterface $logger,
+        private readonly LoggerInterface $logger,
     ) {}
 
-    public function execute(Observer $observer)
+    /**
+     * @param Observer $observer
+     * @return void
+     */
+    public function execute(Observer $observer): void
     {
         $request = $observer->getData('request');
         $this->logger->info('blog post detail viewed', [

@@ -1,4 +1,4 @@
-# Rubenromao_Blog module
+# Rubenromao_BlogPosts module
 
 Custom Magento v2.4.6-p3 Blog module to cover Magento 2 concepts and design patterns.
 
@@ -36,7 +36,7 @@ composer require rubenromao/blog
 Run the following command to enable the module:
 
 ```
-bin/magento module:enable Rubenromao_Blog
+bin/magento module:enable Rubenromao_BlogPosts
 ```
 
 You must run the following commands after the module installation using magento-cli
@@ -52,13 +52,13 @@ For information about a module installation in Magento 2, see [Enable or disable
 
 ## Extensibility
 
-The Rubenromao_Blog module contains extensibility points that you can interact with.
+The Rubenromao_BlogPosts module contains extensibility points that you can interact with.
 Web API, Service contracts, plugins, events, and observers enable you to extend and customize the Magento application.
 You can interact with the following extension points:
 
-Extension developers can interact with the Rubenromao_Blog module. For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).
+Extension developers can interact with the Rubenromao_BlogPosts module. For more information about the Magento extension mechanism, see [Magento plug-ins](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html).
 
-[The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Rubenromao_Blog module.
+[The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Rubenromao_BlogPosts module.
 
 ### Layouts
 
@@ -76,7 +76,7 @@ For information about a UI component in Magento 2, see [Overview of UI component
 
 ## Additional information
 
-The Rubenromao_Blog module creates a new database table `rubenromao_blog_post` during the installation process.
+The Rubenromao_BlogPosts module creates a new database table `rubenromao_blog_post` during the installation process.
 This table stores blog posts.
 
 For information about significant changes in patch releases, see [Release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).

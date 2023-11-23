@@ -1,18 +1,20 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
-namespace Rubenromao\Blog\Api\Data;
+namespace Rubenromao\BlogPosts\Api\Data;
 
 /**
  * Blog post interface.
+ *
  * @api
  * @since 1.0.0
  */
 interface PostInterface
 {
-    const ID = 'id';
-    const TITLE = 'title';
-    const CONTENT = 'content';
-    const CREATED_AT = 'created_at';
+    public const ID = 'id';
+    public const TITLE = 'title';
+    public const CONTENT = 'content';
+    public const CREATED_AT = 'created_at';
 
     /**
      * @return int
@@ -23,7 +25,7 @@ interface PostInterface
      * @param int $id
      * @return $this
      */
-    public function setId($id);
+    public function setId(int $id);
 
     /**
      * @return string
@@ -34,7 +36,7 @@ interface PostInterface
      * @param string $title
      * @return $this
      */
-    public function setTitle($title);
+    public function setTitle(string $title);
 
     /**
      * @return string
@@ -45,7 +47,7 @@ interface PostInterface
      * @param string $content
      * @return $this
      */
-    public function setContent($content);
+    public function setContent(string $content);
 
     /**
      * @return string

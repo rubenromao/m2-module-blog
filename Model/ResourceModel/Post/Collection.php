@@ -1,14 +1,23 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
-namespace Rubenromao\Blog\Model\ResourceModel\Post;
+namespace Rubenromao\BlogPosts\Model\ResourceModel\Post;
 
-use Rubenromao\Blog\Model\Post;
-use Rubenromao\Blog\Model\ResourceModel\Post as PostResourceModel;
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+use Rubenromao\BlogPosts\Model\Post;
+use Rubenromao\BlogPosts\Model\ResourceModel\Post as PostResourceModel;
 
+/**
+ * Class Collection
+ *
+ * @package Rubenromao\BlogPosts\Model\ResourceModel\Post
+ */
 class Collection extends AbstractCollection
 {
-    protected function _construct()
+    /**
+     * @return void
+     */
+    protected function _construct(): void
     {
         $this->_init(Post::class, PostResourceModel::class);
     }

@@ -5,6 +5,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Rubenromao_Blog',
+    'Rubenromao_BlogPosts',
     __DIR__
 );
