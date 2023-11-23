@@ -1,0 +1,17 @@
+{
+    "name": "rubenromao/m2-module-blog",
+    "version": "1.0.0",
+    "description": "Custom Blog module that covers most of the M2 concepts and design patterns.",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Rubenromao\\Blog\\": ""
+        }
+    }
+}
