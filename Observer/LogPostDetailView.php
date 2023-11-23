@@ -21,17 +21,21 @@ class LogPostDetailView implements ObserverInterface
      */
     public function __construct(
         private readonly LoggerInterface $logger,
-    ) {}
+    ) {
+    }
 
     /**
-     * @param Observer $observer
+     * @param  Observer $observer
      * @return void
      */
     public function execute(Observer $observer): void
     {
         $request = $observer->getData('request');
-        $this->logger->info('blog post detail viewed', [
+        $this->logger->info(
+            'blog post detail viewed',
+            [
             'params' => $request->getParams(),
-        ]);
+            ]
+        );
     }
 }

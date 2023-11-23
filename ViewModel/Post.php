@@ -20,15 +20,16 @@ class Post implements ArgumentInterface
     /**
      * Post constructor.
      *
-     * @param Collection $collection
+     * @param Collection              $collection
      * @param PostRepositoryInterface $postRepository
-     * @param RequestInterface $request
+     * @param RequestInterface        $request
      */
     public function __construct(
         private readonly Collection              $collection,
         private readonly PostRepositoryInterface $postRepository,
         private readonly RequestInterface        $request,
-    ) {}
+    ) {
+    }
 
     /**
      * @return array

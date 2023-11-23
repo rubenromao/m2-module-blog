@@ -21,16 +21,17 @@ class PopulateBlogPostsWithMultiplePosts implements DataPatchInterface
      * Constructor.
      *
      * @param ModuleDataSetupInterface $moduleDataSetup
-     * @param PostFactory $postFactory
-     * @param PostRepositoryInterface $postRepository
-     * @param LoggerInterface $logger
+     * @param PostFactory              $postFactory
+     * @param PostRepositoryInterface  $postRepository
+     * @param LoggerInterface          $logger
      */
     public function __construct(
         private readonly ModuleDataSetupInterface $moduleDataSetup,
         private readonly PostFactory              $postFactory,
         private readonly PostRepositoryInterface  $postRepository,
         private readonly LoggerInterface          $logger,
-    ) {}
+    ) {
+    }
 
     /**
      * @return array|string[]

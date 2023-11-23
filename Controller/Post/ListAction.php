@@ -21,7 +21,8 @@ class ListAction implements HttpGetActionInterface
      */
     public function __construct(
         private readonly PageFactory $pageFactory,
-    ) {}
+    ) {
+    }
 
     /**
      * @return Page

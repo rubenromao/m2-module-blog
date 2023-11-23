@@ -21,16 +21,17 @@ class PopulateBlogPostsWithOnePost implements DataPatchInterface
      * Constructor.
      *
      * @param ModuleDataSetupInterface $moduleDataSetup
-     * @param PostFactory $postFactory
-     * @param PostRepositoryInterface $postRepository
-     * @param LoggerInterface $logger
+     * @param PostFactory              $postFactory
+     * @param PostRepositoryInterface  $postRepository
+     * @param LoggerInterface          $logger
      */
     public function __construct(
         private readonly ModuleDataSetupInterface $moduleDataSetup,
         private readonly PostFactory              $postFactory,
         private readonly PostRepositoryInterface  $postRepository,
         private readonly LoggerInterface          $logger,
-    ) {}
+    ) {
+    }
 
     /**
      * @return array|string[]
@@ -57,10 +58,12 @@ class PopulateBlogPostsWithOnePost implements DataPatchInterface
         $this->moduleDataSetup->startSetup();
 
         $post = $this->postFactory->create();
-        $post->setData([
+        $post->setData(
+            [
             'title'   => 'An awesome post',
             'content' => 'This is totally awesome!',
-        ]);
+            ]
+        );
 
         try {
             $this->postRepository->save($post);

@@ -22,7 +22,7 @@ interface PostInterface
     public function getId();
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return $this
      */
     public function setId(int $id);
@@ -33,7 +33,7 @@ interface PostInterface
     public function getTitle();
 
     /**
-     * @param string $title
+     * @param  string $title
      * @return $this
      */
     public function setTitle(string $title);
@@ -44,7 +44,7 @@ interface PostInterface
     public function getContent();
 
     /**
-     * @param string $content
+     * @param  string $content
      * @return $this
      */
     public function setContent(string $content);

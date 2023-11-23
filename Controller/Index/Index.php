@@ -21,14 +21,17 @@ class Index implements HttpGetActionInterface
      */
     public function __construct(
         private readonly ForwardFactory $forwardFactory,
-    ) {}
+    ) {
+    }
 
     /**
      * @return Forward
      */
     public function execute(): Forward
     {
-        /** @var Forward $forward */
+        /**
+ * @var Forward $forward
+*/
         $forward = $this->forwardFactory->create();
 
         return $forward->setController('post')->forward('list');

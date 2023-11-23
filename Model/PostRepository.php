@@ -21,16 +21,17 @@ class PostRepository implements PostRepositoryInterface
     /**
      * Constructor.
      *
-     * @param PostFactory $postFactory
+     * @param PostFactory       $postFactory
      * @param PostResourceModel $postResourceModel
      */
     public function __construct(
         private readonly PostFactory       $postFactory,
         private readonly PostResourceModel $postResourceModel,
-    ) {}
+    ) {
+    }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return PostInterface
      * @throws NoSuchEntityException
      */
@@ -47,7 +48,7 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * @param PostInterface $post
+     * @param  PostInterface $post
      * @return PostInterface
      * @throws CouldNotSaveException
      */
@@ -63,7 +64,7 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return bool
      * @throws CouldNotDeleteException
      * @throws NoSuchEntityException

@@ -7,6 +7,6 @@ $post = $postVm->getDetail();
 ?>
 <div class="blog-post-detail">
     <h1><?= $escaper->escapeHtml($post->getTitle()) ?></h1>
-    <p><em><?= __('Created at: %1', $post->getCreatedAt()) ?></em></p>
+    <p><em><?= $escaper->escapeHtml(__('Created at: %1', $post->getCreatedAt())) ?></em></p>
     <p><?= $escaper->escapeHtml($post->getContent(), ['em', 'p', 'strong']) ?></p>
 </div>

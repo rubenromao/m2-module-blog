@@ -75,7 +75,7 @@ $wishlistViewModel = $block->getData('wishlistDataViewModel');
             <!-- ko ifnot: wishlist().counter -->
             <div class="empty"><?= $block->escapeHtml(__('You have no items in your wish list.')) ?></div>
             <div>
-                <a href="<?= $escaper->escapeUrl($this->getBaseUrl()) ?>"
+                <a href="<?= $escaper->escapeUrl($block->getBaseUrl()) ?>"
                    title="<?= $escaper->escapeHtmlAttr(__('Browse for items')) ?>">
                     <span><?= $escaper->escapeHtml(__('Browse for items')) ?></span>
                 </a>

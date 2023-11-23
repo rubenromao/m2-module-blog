@@ -16,21 +16,21 @@ use Rubenromao\BlogPosts\Api\Data\PostInterface;
 interface PostRepositoryInterface
 {
     /**
-     * @param int $id
+     * @param  int $id
      * @return PostInterface
      * @throws LocalizedException
      */
     public function getById(int $id): PostInterface;
 
     /**
-     * @param PostInterface $post
+     * @param  PostInterface $post
      * @return PostInterface
      * @throws LocalizedException
      */
     public function save(PostInterface $post): PostInterface;
 
     /**
-     * @param int $id
+     * @param  int $id
      * @return bool
      * @throws LocalizedException
      * @throws NoSuchEntityException

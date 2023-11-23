@@ -30,7 +30,7 @@ class Post extends AbstractModel implements PostInterface
     }
 
     /**
-     * @param string $title
+     * @param  string $title
      * @return Post
      */
     public function setTitle(string $title): Post
@@ -47,7 +47,7 @@ class Post extends AbstractModel implements PostInterface
     }
 
     /**
-     * @param string $content
+     * @param  string $content
      * @return Post
      */
     public function setContent(string $content): Post
