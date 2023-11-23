@@ -1,5 +1,5 @@
 {
-    "name": "rubenromao/m2-module-blog-post",
+    "name": "rubenromao/m2-module-blog-posts",
     "version": "1.0.0",
     "description": "Custom Blog Posts module that covers most of the M2 concepts and design patterns.",
     "type": "magento2-module",
