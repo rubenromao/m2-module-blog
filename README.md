@@ -1,6 +1,8 @@
 # Rubenromao_BlogPosts module
 
-Custom Magento v2.4.6-p3 Blog module to cover Magento 2 concepts and design patterns.
+## Module details
+
+Custom Magento v2.4.6-p3 Blog Posts module to cover most of Magento 2 concepts and design patterns.
 
 It covers the app structure, how routing & controllers work, how to extend core code,
 dependency injection & interfaces, different design patterns and usages, ways to modify the page layout, and understand data management.
@@ -14,12 +16,23 @@ It provides the following functionality:
 Custom database table to store blog posts.
 Custom model to manage blog posts.
 Custom Web API endpoints to create, update, delete, and get blog posts.
-Custom admin grid to manage blog posts.
-Custom admin form to create and edit blog posts.
+Custom service contracts to create, update, delete, and get blog posts.
+Custom Observer to log blog post creation.
 Custom frontend page to create a blog post.
 Custom frontend page to edit a blog post.
 Custom frontend page to delete a blog post.
 Custom frontend page to display blog posts.
+
+### TODO
+- Plugin to add extra information to the blog post (just to show how to use plugins).
+- Admin system configuration to enable/disable the module and other settings.
+- Admin grid to display blog posts.
+- Admin form to create/edit/delete blog posts.
+- Admin ACL to manage blog posts.
+- Admin menu to manage blog posts.
+- Admin mass actions to delete blog posts.
+- Admin UI component to manage blog posts.
+
 
 ## Installation details
 
@@ -29,6 +42,23 @@ The
 
 ### Install using composer
 
+Add the repository to composer.json
+```
+composer config repositories.rubenromao git https://github.com/rubenromao/m2-module-blog-posts.git
+```
+
+This will add the following to your composer.json's repositories section
+```
+"repositories": {
+    "rubenromao": {
+        "type": "git",
+        "url": "https://github.com/rubenromao/m2-module-blog-posts.git"
+    },
+}
+
+```
+
+Install the module
 ``` 
 composer require rubenromao/m2-module-blog-posts:1.0.0
 ```

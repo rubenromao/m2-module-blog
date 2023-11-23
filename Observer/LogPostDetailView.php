@@ -8,7 +8,7 @@ use Magento\Framework\Event\ObserverInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * Class LogPostDetailView
+ * Logs Viewed Posts
  *
  * @package Rubenromao\BlogPosts\Observer
  */
