@@ -1,0 +1,21 @@
+type BlogPost {
+    id: Int @doc(description: "The id of our blog post.")
+    title: String @doc(description: "The title for our blog post.")
+    content: String @doc(description: "The content for our blog post.")
+    created_at: String @doc(description: "The date the blog post was created.")
+}
+
+type BlogPosts {
+    total_count: Int @doc(description: "Total count")
+    total_pages: Int @doc(description: "Total pages")
+    items: [BlogPost] @doc(description: "The list of posts.")
+}
+
+type Query {
+    blogPost(id: Int): BlogPost @resolver(class: "Rubenromao\\BlogPosts\\Model\\Resolver\\BlogPostResolver") @doc(description: "Return a blog post.")
+    blogPosts(
+        search: String @doc(description: "Performs a full-text search using the specified key words."),
+        pageSize: Int = 10 @doc(description: "Specifies the maximum number of results to return at once. This attribute is optional."),
+        currentPage: Int = 1 @doc(description: "Specifies which page of results to return. The default value is 1.")
+    ): BlogPosts @resolver(class: "Rubenromao\\BlogPosts\\Model\\Resolver\\BlogPostsResolver") @doc(description: "Return a list of blog posts.")
+}
