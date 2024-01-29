@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Model\Resolver;
+namespace RubenRomao\BlogPosts\Model\Resolver;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
@@ -11,7 +11,7 @@ use Magento\Framework\GraphQl\Exception\GraphQlInputException;
 use Magento\Framework\GraphQl\Exception\GraphQlNoSuchEntityException;
 use Magento\Framework\GraphQl\Query\ResolverInterface;
 use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
-use Rubenromao\BlogPosts\Api\PostRepositoryInterface;
+use RubenRomao\BlogPosts\Api\PostRepositoryInterface;
 
 class BlogPostResolver implements ResolverInterface
 {

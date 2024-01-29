@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Model\ResourceModel\Post;
+namespace RubenRomao\BlogPosts\Model\ResourceModel\Post;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
-use Rubenromao\BlogPosts\Model\Post;
-use Rubenromao\BlogPosts\Model\ResourceModel\Post as PostResourceModel;
+use RubenRomao\BlogPosts\Model\Post;
+use RubenRomao\BlogPosts\Model\ResourceModel\Post as PostResourceModel;
 
 /**
  * Post Collection

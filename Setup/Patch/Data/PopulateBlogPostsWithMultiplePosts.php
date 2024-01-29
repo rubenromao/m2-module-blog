@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Setup\Patch\Data;
+namespace RubenRomao\BlogPosts\Setup\Patch\Data;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Psr\Log\LoggerInterface;
-use Rubenromao\BlogPosts\Api\PostRepositoryInterface;
-use Rubenromao\BlogPosts\Model\PostFactory;
+use RubenRomao\BlogPosts\Api\PostRepositoryInterface;
+use RubenRomao\BlogPosts\Model\PostFactory;
 
 /**
  * Data patch to add two blog posts to the database.

@@ -4,16 +4,16 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main">
-            <block name="blog.post.detail" template="Rubenromao_BlogPosts::post/detail.phtml">
+            <block name="blog.post.detail" template="RubenRomao_BlogPosts::post/detail.phtml">
                 <arguments>
-                    <argument name="post_vm" xsi:type="object">Rubenromao\BlogPosts\ViewModel\Post</argument>
+                    <argument name="post_vm" xsi:type="object">RubenRomao\BlogPosts\ViewModel\Post</argument>
                 </arguments>
             </block>
         </referenceContainer>
         <referenceContainer name="sidebar.main">
-            <block name="blog.post.sidebar" template="Rubenromao_BlogPosts::post/sidebar.phtml">
+            <block name="blog.post.sidebar" template="RubenRomao_BlogPosts::post/sidebar.phtml">
                 <arguments>
-                    <argument name="post_vm" xsi:type="object">Rubenromao\BlogPosts\ViewModel\Post</argument>
+                    <argument name="post_vm" xsi:type="object">RubenRomao\BlogPosts\ViewModel\Post</argument>
                 </arguments>
             </block>
         </referenceContainer>

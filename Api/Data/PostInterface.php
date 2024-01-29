@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Api\Data;
+namespace RubenRomao\BlogPosts\Api\Data;
 
 /**
  * Blog post interface.

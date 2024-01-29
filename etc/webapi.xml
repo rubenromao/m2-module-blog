@@ -2,31 +2,31 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <route method="GET" url="/V1/blog_post/:id">
-        <service class="Rubenromao\BlogPosts\Api\PostRepositoryInterface" method="getById"/>
+        <service class="RubenRomao\BlogPosts\Api\PostRepositoryInterface" method="getById"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>
     </route>
     <route method="GET" url="/V1/blog_post/:start_date/:end_date">
-        <service class="Rubenromao\BlogPosts\Api\PostRepositoryInterface" method="getByDateRange"/>
+        <service class="RubenRomao\BlogPosts\Api\PostRepositoryInterface" method="getByDateRange"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>
     </route>
     <route method="POST" url="/V1/blog_post">
-        <service class="Rubenromao\BlogPosts\Api\PostRepositoryInterface" method="save"/>
+        <service class="RubenRomao\BlogPosts\Api\PostRepositoryInterface" method="save"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>
     </route>
     <route method="PUT" url="/V1/blog_post">
-        <service class="Rubenromao\BlogPosts\Api\PostRepositoryInterface" method="save"/>
+        <service class="RubenRomao\BlogPosts\Api\PostRepositoryInterface" method="save"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>
     </route>
     <route method="DELETE" url="/V1/blog_post/:id">
-        <service class="Rubenromao\BlogPosts\Api\PostRepositoryInterface" method="deleteById"/>
+        <service class="RubenRomao\BlogPosts\Api\PostRepositoryInterface" method="deleteById"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>

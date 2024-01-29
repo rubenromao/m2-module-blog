@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Controller\Index;
+namespace RubenRomao\BlogPosts\Controller\Index;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\Result\Forward;

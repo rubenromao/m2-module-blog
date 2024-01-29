@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Controller\Post;
+namespace RubenRomao\BlogPosts\Controller\Post;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;

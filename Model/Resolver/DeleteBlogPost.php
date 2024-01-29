@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubenromao\BlogPosts\Model\GraphQl;
+namespace RubenRomao\BlogPosts\Model\GraphQl;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
@@ -9,7 +9,7 @@ use Magento\Framework\GraphQl\Query\Resolver\BatchResolverInterface;
 use Magento\Framework\GraphQl\Query\Resolver\BatchResponse;
 use Magento\Framework\GraphQl\Query\Resolver\ContextInterface;
 use Psr\Log\LoggerInterface;
-use Rubenromao\BlogPosts\Api\PostRepositoryInterface;
+use RubenRomao\BlogPosts\Api\PostRepositoryInterface;
 
 class DeleteBlogPost implements BatchResolverInterface
 {

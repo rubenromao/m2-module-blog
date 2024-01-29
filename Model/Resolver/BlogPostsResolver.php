@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Model\Resolver;
+namespace RubenRomao\BlogPosts\Model\Resolver;
 
 use Macademy\Blog\Model\ResourceModel\Post\Collection;
 use Magento\Framework\GraphQl\Config\Element\Field;

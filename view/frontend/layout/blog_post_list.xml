@@ -4,9 +4,9 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main">
-            <block name="blog.post.list" template="Rubenromao_BlogPosts::post/list.phtml">
+            <block name="blog.post.list" template="RubenRomao_BlogPosts::post/list.phtml">
                 <arguments>
-                    <argument name="post_vm" xsi:type="object">Rubenromao\BlogPosts\ViewModel\Post</argument>
+                    <argument name="post_vm" xsi:type="object">RubenRomao\BlogPosts\ViewModel\Post</argument>
                 </arguments>
             </block>
         </referenceContainer>

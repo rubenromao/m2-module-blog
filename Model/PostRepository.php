@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Model;
+namespace RubenRomao\BlogPosts\Model;
 
 use Exception;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Rubenromao\BlogPosts\Api\Data\PostInterface;
-use Rubenromao\BlogPosts\Api\PostRepositoryInterface;
-use Rubenromao\BlogPosts\Model\ResourceModel\Post as PostResourceModel;
+use RubenRomao\BlogPosts\Api\Data\PostInterface;
+use RubenRomao\BlogPosts\Api\PostRepositoryInterface;
+use RubenRomao\BlogPosts\Model\ResourceModel\Post as PostResourceModel;
 
 /**
  * Blog post CRUD class.

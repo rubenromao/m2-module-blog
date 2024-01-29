@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Rubenromao\BlogPosts\Api\Data\PostInterface" type="Rubenromao\BlogPosts\Model\Post"/>
-    <preference for="Rubenromao\BlogPosts\Api\PostRepositoryInterface" type="Rubenromao\BlogPosts\Model\PostRepository"/>
+    <preference for="RubenRomao\BlogPosts\Api\Data\PostInterface" type="RubenRomao\BlogPosts\Model\Post"/>
+    <preference for="RubenRomao\BlogPosts\Api\PostRepositoryInterface" type="RubenRomao\BlogPosts\Model\PostRepository"/>
 </config>

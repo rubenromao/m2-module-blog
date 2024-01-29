@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Model\ResourceModel;
+namespace RubenRomao\BlogPosts\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 

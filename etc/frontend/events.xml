@@ -3,6 +3,6 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="rubenromao_blog_post_detail_view">
         <observer name="rubenromao_blog_observer_log_post_detail_view"
-                  instance="Rubenromao\BlogPosts\Observer\LogPostDetailView"/>
+                  instance="RubenRomao\BlogPosts\Observer\LogPostDetailView"/>
     </event>
 </config>

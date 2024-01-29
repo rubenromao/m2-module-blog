@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\Model;
+namespace RubenRomao\BlogPosts\Model;
 
 use Magento\Framework\Model\AbstractModel;
-use Rubenromao\BlogPosts\Api\Data\PostInterface;
+use RubenRomao\BlogPosts\Api\Data\PostInterface;
 
 /**
  * Post model

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Rubenromao\BlogPosts\ViewModel;
+namespace RubenRomao\BlogPosts\ViewModel;
 
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
-use Rubenromao\BlogPosts\Api\Data\PostInterface;
-use Rubenromao\BlogPosts\Api\PostRepositoryInterface;
-use Rubenromao\BlogPosts\Model\ResourceModel\Post\Collection;
+use RubenRomao\BlogPosts\Api\Data\PostInterface;
+use RubenRomao\BlogPosts\Api\PostRepositoryInterface;
+use RubenRomao\BlogPosts\Model\ResourceModel\Post\Collection;
 
 /**
  * ViewModel to get posts data from the database and make it available for the template
