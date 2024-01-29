@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Rubenromao\BlogPosts\Api;
@@ -15,6 +16,16 @@ use Rubenromao\BlogPosts\Api\Data\PostInterface;
  */
 interface PostRepositoryInterface
 {
+    /**
+     * Get posts by date range.
+     *
+     * @param string $startDate
+     * @param string $endDate
+     * @return PostInterface[]
+     * @throws NoSuchEntityException
+     */
+    public function getByDateRange(string $startDate, string $endDate): array;
+
     /**
      * Get post by ID.
      *

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Rubenromao\BlogPosts\ViewModel;
@@ -23,9 +24,9 @@ class Post implements ArgumentInterface
      * @param RequestInterface $request
      */
     public function __construct(
-        private readonly Collection              $collection,
+        private readonly Collection $collection,
         private readonly PostRepositoryInterface $postRepository,
-        private readonly RequestInterface        $request,
+        private readonly RequestInterface $request,
     ) {
     }
 

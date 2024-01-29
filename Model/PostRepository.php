@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Rubenromao\BlogPosts\Model;
@@ -17,15 +18,37 @@ use Rubenromao\BlogPosts\Model\ResourceModel\Post as PostResourceModel;
 class PostRepository implements PostRepositoryInterface
 {
     /**
-     * Constructor.
+     * PostRepository Constructor.
      *
      * @param PostFactory $postFactory
      * @param PostResourceModel $postResourceModel
      */
     public function __construct(
-        private readonly PostFactory       $postFactory,
+        private readonly PostFactory $postFactory,
         private readonly PostResourceModel $postResourceModel,
-    ) {
+    ) {}
+
+    /**
+     * Get posts by date range
+     *
+     * @param string $startDate
+     * @param string $endDate
+     * @return PostInterface[]
+     * @throws NoSuchEntityException
+     */
+    public function getByDateRange(string $startDate, string $endDate): array
+    {
+        $postCollection = $this->postFactory->create()->getCollection();
+        $postCollection->addFieldToFilter('created_at', ['gteq' => $startDate])
+            ->addFieldToFilter('created_at', ['lteq' => $endDate]);
+
+        $posts = $postCollection->getItems();
+
+        if (empty($posts)) {
+            throw new NoSuchEntityException(__('No blog posts found between "%1" and "%2".', $startDate, $endDate));
+        }
+
+        return $posts;
     }
 
     /**
@@ -81,6 +104,33 @@ class PostRepository implements PostRepositoryInterface
             $this->postResourceModel->delete($post);
         } catch (Exception $exception) {
             throw new CouldNotDeleteException(__($exception->getMessage()));
+        }
+
+        return true;
+    }
+    /**
+     * Delete posts by date range
+     *
+     * @param string $startDate
+     * @param string $endDate
+     * @return bool
+     * @throws CouldNotDeleteException
+     */
+    public function deleteByDateRange(string $startDate, string $endDate): bool
+    {
+        $postCollection = $this->postFactory->create()->getCollection();
+        $postCollection->addFieldToFilter('created_at', ['from' => $startDate, 'to' => $endDate]);
+
+        $posts = $postCollection->getItems();
+
+        if(!empty($posts)) {
+            try {
+                foreach ($posts as $post) {
+                    $this->postResourceModel->delete($post);
+                }
+            } catch (Exception $exception) {
+                throw new CouldNotDeleteException(__($exception->getMessage()));
+            }
         }
 
         return true;

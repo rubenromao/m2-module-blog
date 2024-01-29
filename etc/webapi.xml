@@ -7,6 +7,12 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
+    <route method="GET" url="/V1/blog_post/:start_date/:end_date">
+        <service class="Rubenromao\BlogPosts\Api\PostRepositoryInterface" method="getByDateRange"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
     <route method="POST" url="/V1/blog_post">
         <service class="Rubenromao\BlogPosts\Api\PostRepositoryInterface" method="save"/>
         <resources>
