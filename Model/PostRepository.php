@@ -29,6 +29,25 @@ class PostRepository implements PostRepositoryInterface
     ) {}
 
     /**
+     * Get post by ID Model
+     *
+     * @param int $id
+     * @return PostInterface
+     * @throws NoSuchEntityException
+     */
+    public function getById(int $id): PostInterface
+    {
+        $post = $this->postFactory->create();
+        $this->postResourceModel->load($post, $id);
+
+        if (!$post->getId()) {
+            throw new NoSuchEntityException(__('The blog post with "%1" ID doesn\'t exist.', $id));
+        }
+
+        return $post;
+    }
+
+    /**
      * Get posts by date range
      *
      * @param string $startDate
@@ -49,25 +68,6 @@ class PostRepository implements PostRepositoryInterface
         }
 
         return $posts;
-    }
-
-    /**
-     * Get post by ID Model
-     *
-     * @param int $id
-     * @return PostInterface
-     * @throws NoSuchEntityException
-     */
-    public function getById(int $id): PostInterface
-    {
-        $post = $this->postFactory->create();
-        $this->postResourceModel->load($post, $id);
-
-        if (!$post->getId()) {
-            throw new NoSuchEntityException(__('The blog post with "%1" ID doesn\'t exist.', $id));
-        }
-
-        return $post;
     }
 
     /**
@@ -104,33 +104,6 @@ class PostRepository implements PostRepositoryInterface
             $this->postResourceModel->delete($post);
         } catch (Exception $exception) {
             throw new CouldNotDeleteException(__($exception->getMessage()));
-        }
-
-        return true;
-    }
-    /**
-     * Delete posts by date range
-     *
-     * @param string $startDate
-     * @param string $endDate
-     * @return bool
-     * @throws CouldNotDeleteException
-     */
-    public function deleteByDateRange(string $startDate, string $endDate): bool
-    {
-        $postCollection = $this->postFactory->create()->getCollection();
-        $postCollection->addFieldToFilter('created_at', ['from' => $startDate, 'to' => $endDate]);
-
-        $posts = $postCollection->getItems();
-
-        if(!empty($posts)) {
-            try {
-                foreach ($posts as $post) {
-                    $this->postResourceModel->delete($post);
-                }
-            } catch (Exception $exception) {
-                throw new CouldNotDeleteException(__($exception->getMessage()));
-            }
         }
 
         return true;
