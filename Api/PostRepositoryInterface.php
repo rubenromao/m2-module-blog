@@ -17,23 +17,23 @@ use RubenRomao\BlogPosts\Api\Data\PostInterface;
 interface PostRepositoryInterface
 {
     /**
+     * Get post by ID.
+     *
+     * @param int $id
+     * @return PostInterface|null
+     * @throws LocalizedException
+     */
+    public function getById(int $id): ?PostInterface;
+
+    /**
      * Get posts by date range.
      *
      * @param string $startDate
      * @param string $endDate
-     * @return PostInterface[]
+     * @return PostInterface[]|null
      * @throws NoSuchEntityException
      */
-    public function getByDateRange(string $startDate, string $endDate): array;
-
-    /**
-     * Get post by ID.
-     *
-     * @param int $id
-     * @return PostInterface
-     * @throws LocalizedException
-     */
-    public function getById(int $id): PostInterface;
+    public function getByDateRange(string $startDate, string $endDate): ?array;
 
     /**
      * Save post.

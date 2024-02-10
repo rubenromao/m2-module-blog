@@ -16,19 +16,13 @@ use RubenRomao\BlogPosts\Api\PostRepositoryInterface;
 class BlogPostResolver implements ResolverInterface
 {
     /**
-     * @var ?PostRepositoryInterface
-     */
-    private ?PostRepositoryInterface $postRepository;
-
-    /**
      * BlogPostResolver constructor.
      *
      * @param PostRepositoryInterface $postRepository
      */
     public function __construct(
-        PostRepositoryInterface $postRepository,
+        private readonly PostRepositoryInterface $postRepository,
     ) {
-        $this->postRepository = $postRepository;
     }
 
     /**

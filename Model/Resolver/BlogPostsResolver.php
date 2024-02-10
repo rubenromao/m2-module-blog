@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RubenRomao\BlogPosts\Model\Resolver;
 
-use Macademy\Blog\Model\ResourceModel\Post\Collection;
+use RubenRomao\BlogPosts\Model\ResourceModel\Post\Collection;
 use Magento\Framework\GraphQl\Config\Element\Field;
 use Magento\Framework\GraphQl\Exception\GraphQlNoSuchEntityException;
 use Magento\Framework\GraphQl\Query\ResolverInterface;
@@ -13,19 +13,13 @@ use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
 class BlogPostsResolver implements ResolverInterface
 {
     /**
-     * @var ?Collection
-     */
-    private ?Collection $collection;
-
-    /**
      * BlogPostsResolver constructor.
      *
      * @param Collection $collection
      */
     public function __construct(
-        Collection $collection,
+        private readonly Collection $collection,
     ) {
-        $this->collection = $collection;
     }
 
     /**
@@ -47,6 +41,7 @@ class BlogPostsResolver implements ResolverInterface
         array $args = null,
     ): array {
         try {
+
             // getting the arguments of request
             $search_text = $args['search'];
             $pageSize = $args['pageSize'];
