@@ -1,6 +1,7 @@
 <?php
 /**
  * @author Ruben Romao
+ * @email rubenromao@gmail.com
  * @date 2024-01-04
  */
 declare(strict_types=1);
@@ -11,6 +12,8 @@ use Magento\Ui\DataProvider\AbstractDataProvider;
 use RubenRomao\BlogPosts\Model\ResourceModel\Post\CollectionFactory;
 
 /**
+ * PostDataProvider.php
+ *
  * This class is responsible for providing data for the blog post listing in the admin panel.
  * It extends the  AbstractDataProvider  class and has the following method:
  *  - getData() : This method retrieves the data from the database and prepares it for the UI components.
